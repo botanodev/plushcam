@@ -69,6 +69,16 @@
   .stores b { font-size: 1.05rem; white-space: nowrap; }
 
   .wrap { padding: 0 20px 64px; }
+  .photos { display: grid; gap: 14px; margin: 28px 0 0; align-items: start; }
+  .photos.n2 { grid-template-columns: 1fr 1fr; }
+  .photos figure { margin: 0; }
+  .photos img {
+    display: block; width: 100%; height: auto; border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.14);
+  }
+  .photos figcaption { color: var(--muted); font-size: .86rem; margin-top: 8px; line-height: 1.5; }
+  /* 長圖很長：手機上限制寬度，不然要滑很久才看到內文 */
+  .photos .long { max-width: 220px; margin: 0 auto; }
   .desc { margin-top: 28px; }
   .desc h2 { font-size: 1.08rem; margin: 36px 0 10px; }
   .desc p { margin: 0 0 14px; }
@@ -111,6 +121,10 @@
     <a href="https://apps.apple.com/app/id6835796281"><small>iPhone</small><b>App Store</b></a>
   </div>
 
+  <div class="photos n2">
+    <figure class="photo"><img src="img/photo.jpg" width="720" height="1022" alt="できあがった写真。ぬいはお留守番、でも写真には一緒に。" loading="lazy"><figcaption>できあがった写真。ぬいはお留守番、でも写真には一緒に。</figcaption></figure>
+    <figure class="camera"><img src="img/camera-en.jpg" width="540" height="1080" alt="撮影するとき、ぬいはもう画面の中に。" loading="lazy"><figcaption>撮影するとき、ぬいはもう画面の中に。</figcaption></figure>
+  </div>
   <div class="desc">
 <p>大切なぬいは、汚したくない、なくしたくない。透明なぬいポーチに入れて連れて行っても、一日中どこか気になってしまう。</p>
 <p>PlushCam なら、おうちでぬいを一度撮っておくだけ。あとはどこへ行っても、カメラを開けばぬいがもう画面の中にいます。ぬいはおうちで安心してお留守番、写真にはちゃんと一緒に。</p>

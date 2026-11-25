@@ -69,6 +69,16 @@
   .stores b { font-size: 1.05rem; white-space: nowrap; }
 
   .wrap { padding: 0 20px 64px; }
+  .photos { display: grid; gap: 14px; margin: 28px 0 0; align-items: start; }
+  .photos.n2 { grid-template-columns: 1fr 1fr; }
+  .photos figure { margin: 0; }
+  .photos img {
+    display: block; width: 100%; height: auto; border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.14);
+  }
+  .photos figcaption { color: var(--muted); font-size: .86rem; margin-top: 8px; line-height: 1.5; }
+  /* 長圖很長：手機上限制寬度，不然要滑很久才看到內文 */
+  .photos .long { max-width: 220px; margin: 0 auto; }
   .desc { margin-top: 28px; }
   .desc h2 { font-size: 1.08rem; margin: 36px 0 10px; }
   .desc p { margin: 0 0 14px; }
@@ -111,6 +121,10 @@
     <a href="https://apps.apple.com/app/id6835796281"><small>iPhone</small><b>App Store</b></a>
   </div>
 
+  <div class="photos n2">
+    <figure class="photo"><img src="img/photo.jpg" width="720" height="1022" alt="拍好的照片：玩偶留在家，照片裡一樣有它。" loading="lazy"><figcaption>拍好的照片：玩偶留在家，照片裡一樣有它。</figcaption></figure>
+    <figure class="camera"><img src="img/camera-zh.jpg" width="540" height="1080" alt="拍照的時候，玩偶已經在畫面上。" loading="lazy"><figcaption>拍照的時候，玩偶已經在畫面上。</figcaption></figure>
+  </div>
   <div class="desc">
 <p>娃娃是你的寶貝。</p>
 <p>出門想帶它一起拍照，又怕弄髒、怕弄丟；就算裝進透明娃包掛在身上，一路上還是忍不住擔心。</p>

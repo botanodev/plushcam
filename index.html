@@ -80,6 +80,16 @@
   .stores b { font-size: 1.05rem; white-space: nowrap; }
 
   .wrap { padding: 0 20px 64px; }
+  .photos { display: grid; gap: 14px; margin: 28px 0 0; align-items: start; }
+  .photos.n2 { grid-template-columns: 1fr 1fr; }
+  .photos figure { margin: 0; }
+  .photos img {
+    display: block; width: 100%; height: auto; border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.14);
+  }
+  .photos figcaption { color: var(--muted); font-size: .86rem; margin-top: 8px; line-height: 1.5; }
+  /* 長圖很長：手機上限制寬度，不然要滑很久才看到內文 */
+  .photos .long { max-width: 220px; margin: 0 auto; }
   .desc { margin-top: 28px; }
   .desc h2 { font-size: 1.08rem; margin: 36px 0 10px; }
   .desc p { margin: 0 0 14px; }
@@ -122,6 +132,10 @@
     <a href="https://apps.apple.com/app/id6835796281"><small>iPhone</small><b>App Store</b></a>
   </div>
 
+  <div class="photos n2">
+    <figure class="photo"><img src="img/photo.jpg" width="720" height="1022" alt="The finished photo. The plushie stayed home, and it is still in the picture." loading="lazy"><figcaption>The finished photo. The plushie stayed home, and it is still in the picture.</figcaption></figure>
+    <figure class="camera"><img src="img/camera-en.jpg" width="540" height="1080" alt="While you shoot, your plushie is already in the frame." loading="lazy"><figcaption>While you shoot, your plushie is already in the frame.</figcaption></figure>
+  </div>
   <div class="desc">
 <p>Your plushie is precious.</p>
 <p>You&#x27;d love to take it along for photos, but you worry it&#x27;ll get dirty or lost. Even tucked safely in a clear pouch, it&#x27;s hard not to worry the whole day.</p>

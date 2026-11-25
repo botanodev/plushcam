@@ -69,6 +69,16 @@
   .stores b { font-size: 1.05rem; white-space: nowrap; }
 
   .wrap { padding: 0 20px 64px; }
+  .photos { display: grid; gap: 14px; margin: 28px 0 0; align-items: start; }
+  .photos.n2 { grid-template-columns: 1fr 1fr; }
+  .photos figure { margin: 0; }
+  .photos img {
+    display: block; width: 100%; height: auto; border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.14);
+  }
+  .photos figcaption { color: var(--muted); font-size: .86rem; margin-top: 8px; line-height: 1.5; }
+  /* 長圖很長：手機上限制寬度，不然要滑很久才看到內文 */
+  .photos .long { max-width: 220px; margin: 0 auto; }
   .desc { margin-top: 28px; }
   .desc h2 { font-size: 1.08rem; margin: 36px 0 10px; }
   .desc p { margin: 0 0 14px; }
@@ -111,6 +121,10 @@
     <a href="https://apps.apple.com/app/id6835796281"><small>iPhone</small><b>App Store</b></a>
   </div>
 
+  <div class="photos n2">
+    <figure class="photo"><img src="img/photo.jpg" width="720" height="1022" alt="완성된 사진. 인형은 집에 있지만 사진 속에는 함께 있어요." loading="lazy"><figcaption>완성된 사진. 인형은 집에 있지만 사진 속에는 함께 있어요.</figcaption></figure>
+    <figure class="camera"><img src="img/camera-en.jpg" width="540" height="1080" alt="촬영할 때 인형은 이미 화면 안에 있어요." loading="lazy"><figcaption>촬영할 때 인형은 이미 화면 안에 있어요.</figcaption></figure>
+  </div>
   <div class="desc">
 <p>소중한 인형, 더러워지거나 잃어버릴까 봐 걱정되죠. 투명 인형 파우치에 넣어 데려가도 하루 종일 신경이 쓰이고요.</p>
 <p>PlushCam이 있으면 집에서 인형을 한 번만 찍어 두면 돼요. 그다음엔 어디를 가든 카메라를 켜면 인형이 이미 화면 속에 있어요. 인형은 집에서 안전하게, 사진 속에는 언제나 함께.</p>
