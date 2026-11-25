@@ -1,42 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PlushCam</title>
+<meta name="description" content="Too precious to take outside? Afraid it gets dirty or lost, even in a clear pouch? Photograph your plushie once at home; it stays safe there, and still joins every photo you take.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PlushCam">
+<meta property="og:description" content="Too precious to take outside? Afraid it gets dirty or lost, even in a clear pouch? Photograph your plushie once at home; it stays safe there, and still joins every photo you take.">
+<meta property="og:image" content="https://botanodev.github.io/plushcam/icon.png">
+<meta property="og:url" content="https://botanodev.github.io/plushcam/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="icon.png">
+<link rel="alternate" hreflang="en" href="https://botanodev.github.io/plushcam/">
+<link rel="alternate" hreflang="zh-Hant" href="https://botanodev.github.io/plushcam/index-zh.html">
+<link rel="alternate" hreflang="ja" href="https://botanodev.github.io/plushcam/index-ja.html">
+<link rel="alternate" hreflang="ko" href="https://botanodev.github.io/plushcam/index-ko.html">
+<link rel="alternate" hreflang="x-default" href="https://botanodev.github.io/plushcam/">
+<script>
+(function () {
+  if (/[?&]en\b/.test(location.search)) return;
+  var langs = navigator.languages || [navigator.language || ""];
+  for (var i = 0; i < langs.length; i++) {
+    var l = (langs[i] || "").toLowerCase();
+    if (l.indexOf("en") === 0) return;
+    var to = { zh: "index-zh.html", ja: "index-ja.html", ko: "index-ko.html" }[l.slice(0, 2)];
+    if (to) { location.replace(to + location.hash); return; }
+  }
+})();
+</script>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                 "Helvetica Neue", "PingFang TC", "Noto Sans TC",
-                 "Microsoft JhengHei", sans-serif;
-    line-height: 1.8;
-    max-width: 36rem;
-    margin: 0 auto;
-    padding: 3rem 1.25rem;
-    color: #1f2328;
-    background: #fff;
+  :root {
+    --bg: #F5F7F4; --ink: #1A1D18; --muted: #4A5147; --hair: #DCE0D8;
+    --brand: #5273A8; --green: #4C7A3F; --card: #FFFFFF;
+    --btn: #1A1D18; --btnink: #FFFFFF;
   }
   @media (prefers-color-scheme: dark) {
-    body { color: #e6e6e6; background: #16181c; }
+    :root {
+      --bg: #101410; --ink: #E2E5DC; --muted: #B3BCAC; --hair: #2B322A;
+      --green: #9DD48B; --card: #171B16;
+      --btn: #E2E5DC; --btnink: #101410;
+    }
   }
-  h1 { font-size: 1.5rem; }
-  ul { padding-left: 1.2rem; }
-  li { margin: 0.6rem 0; }
-  a { color: #2f5e33; }
-  @media (prefers-color-scheme: dark) { a { color: #9ccc9f; } }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: system-ui, "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", sans-serif;
+    line-height: 1.75; -webkit-font-smoothing: antialiased;
+  }
+  header { background: var(--brand); color: #fff; padding: 20px 20px 36px; }
+  header .inner, .wrap { max-width: 40rem; margin: 0 auto; }
+  header .bar {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px; flex-wrap: wrap; margin-bottom: 28px; font-size: .9rem;
+  }
+  header .bar a { color: #DCE4F2; text-decoration: none; }
+  header .bar strong { color: #fff; }
+  header .bar nav { display: flex; gap: 12px; flex-wrap: wrap; }
+  header .app { display: flex; gap: 16px; align-items: center; }
+  header img {
+    width: 76px; height: 76px; border-radius: 18px; flex: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  }
+  header h1 { margin: 0; font-size: 1.6rem; line-height: 1.3; letter-spacing: -.01em; }
+  header h1 small { display: block; font-size: .9rem; font-weight: 400; color: #DCE4F2; }
+  header .line { margin: 18px 0 0; color: #EEF2F9; font-size: 1.02rem; }
+
+  .stores {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    margin: -22px 0 8px; position: relative;
+  }
+  .stores a, .stores span {
+    display: block; padding: 11px 14px; text-decoration: none;
+    border-radius: 12px; line-height: 1.25; text-align: center;
+  }
+  .stores a { background: var(--btn); color: var(--btnink); box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+  .stores span { background: var(--card); color: var(--muted); border: 1px solid var(--hair); }
+  .stores small { display: block; font-size: .75rem; opacity: .75; }
+  .stores b { font-size: 1.05rem; white-space: nowrap; }
+
+  .wrap { padding: 0 20px 64px; }
+  .desc { margin-top: 28px; }
+  .desc h2 { font-size: 1.08rem; margin: 36px 0 10px; }
+  .desc p { margin: 0 0 14px; }
+  .desc ul, .desc ol { margin: 0 0 14px; padding-left: 1.3em; }
+  .desc li { margin-bottom: 6px; }
+  .desc li::marker { color: var(--green); }
+
+  footer {
+    margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--hair);
+    color: var(--muted); font-size: .92rem;
+  }
+  footer a { color: var(--green); }
+  footer p { margin: 0 0 10px; }
 </style>
 </head>
 <body>
 
-<h1>PlushCam</h1>
+<header>
+  <div class="inner">
+    <div class="bar">
+      <a href="/">&larr; Botano</a>
+      <nav>
+        <strong>English</strong>
+        <a href="index-zh.html">中文</a>
+        <a href="index-ja.html">日本語</a>
+        <a href="index-ko.html">한국어</a>
+      </nav>
+    </div>
+    <div class="app">
+      <img src="icon.png" alt="" width="76" height="76">
+      <h1>PlushCam</h1>
+    </div>
+    <p class="line">Too precious to take outside? Afraid it gets dirty or lost, even in a clear pouch? Photograph your plushie once at home; it stays safe there, and still joins every photo you take.</p>
+  </div>
+</header>
 
-<ul>
-  <li><a href="privacy.html">Privacy Policy (English)</a></li>
-  <li><a href="privacy-zh.html">隱私權政策（繁體中文）</a></li>
-</ul>
+<div class="wrap">
+  <div class="stores">
+    <span><small>Android</small><b>Google Play</b><br><small>Coming soon</small></span>
+    <a href="https://apps.apple.com/app/id6835796281"><small>iPhone</small><b>App Store</b></a>
+  </div>
 
-<p><a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a></p>
+  <div class="desc">
+<p>Your plushie is precious.</p>
+<p>You&#x27;d love to take it along for photos, but you worry it&#x27;ll get dirty or lost. Even tucked safely in a clear pouch, it&#x27;s hard not to worry the whole day.</p>
+<p>With PlushCam you photograph your plushie once, at home. After that, wherever you go, open the camera and it&#x27;s already in the shot. Your plushie stays safe at home, and it&#x27;s still in every photo.</p>
+<p>Too big to carry, or just forgot it today? That works too.</p>
+<h2>How it works</h2>
+<ol><li>Take a photo of your plushie&#x27;s front against a plain background, and PlushCam cuts it out automatically (or pick a photo from your gallery)</li><li>Add its right side, back and left side if you want more angles</li><li>When you&#x27;re out, open the camera, frame the view and press the shutter</li></ol>
+<h2>In the moment: two ways to frame it</h2>
+<p><b>Handheld</b><br>Just like holding it up to the lens: the bottom half stays out of frame, so it looks like it&#x27;s really in your hand.</p>
+<p><b>Full body</b><br>Your plushie stands in the scene with a soft shadow at its feet, as if it&#x27;s sitting on the ground or a table.</p>
+<p>Switch between them in one tap, or drag it anywhere in between.</p>
+<h2>Afterwards: add it to photos you already took</h2>
+<p>Didn&#x27;t think of it at the time? Pick a photo from your gallery and place your plushie in it. It&#x27;s saved in high resolution.</p>
+<h2>Make it fit the scene</h2>
+<ul><li>Drag with one finger, pinch to resize and rotate</li><li>Up to 5 plushies in one shot</li><li>Switch between the angles you&#x27;ve shot, or flip it</li><li>Brightness and colour adjust to the surroundings automatically, or fine-tune brightness and shadow yourself</li><li>Tilt your plushie and its shadow follows its outline</li><li>Each plushie remembers where you last placed it</li><li>Front and back camera, zoom, and landscape shots</li></ul>
+<h2>Your photos</h2>
+<ul><li>Your plushie is redrawn at the photo&#x27;s resolution, not pasted on as a small picture</li><li>Add an instant-film style white border with the date printed at the bottom</li><li>Saved straight to the &quot;PlushCam&quot; album in your gallery, or share them right away</li></ul>
+<h2>Free and membership</h2>
+<p>Save your first 3 photos for free, with a small PlushCam watermark in the corner. Then buy a lifetime membership once for unlimited photos with no watermark, unlimited plushies, and backups you can take to a new phone. No ads, no subscription.</p>
+<h2>No account needed</h2>
+<p>No sign-up, no sign-in. Your plushies and photos stay on your phone, and the cut-out is done on your phone too.</p>
+<p>Haven&#x27;t photographed your own yet? PlushCam comes with an original buddy, Sprouty, so you can try it right away.</p>
+  </div>
 
+  <footer>
+    <p>Questions or suggestions: "Settings &rarr; Feedback" in the app, or <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a>.</p>
+    <p><a href="/plushcam/privacy.html">Privacy policy</a> &middot; <a href="/plushcam/privacy-zh.html">繁體中文</a></p>
+    <p><a href="/">More apps by Botano</a></p>
+  </footer>
+</div>
 </body>
 </html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>인형 사진 PlushCam</title>
+<meta name="description" content="소중한 인형이 더러워지거나 잃어버릴까 봐, 투명 인형 파우치에 넣어도 걱정되나요? 집에서 한 번 찍어 두면 인형은 집에서 안전하게, 사진 속에는 언제나 함께할 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="인형 사진 PlushCam">
+<meta property="og:description" content="소중한 인형이 더러워지거나 잃어버릴까 봐, 투명 인형 파우치에 넣어도 걱정되나요? 집에서 한 번 찍어 두면 인형은 집에서 안전하게, 사진 속에는 언제나 함께할 수 있어요.">
+<meta property="og:image" content="https://botanodev.github.io/plushcam/icon.png">
+<meta property="og:url" content="https://botanodev.github.io/plushcam/index-ko.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="icon.png">
+<link rel="alternate" hreflang="en" href="https://botanodev.github.io/plushcam/">
+<link rel="alternate" hreflang="zh-Hant" href="https://botanodev.github.io/plushcam/index-zh.html">
+<link rel="alternate" hreflang="ja" href="https://botanodev.github.io/plushcam/index-ja.html">
+<link rel="alternate" hreflang="ko" href="https://botanodev.github.io/plushcam/index-ko.html">
+<link rel="alternate" hreflang="x-default" href="https://botanodev.github.io/plushcam/">
+
+<style>
+  :root {
+    --bg: #F5F7F4; --ink: #1A1D18; --muted: #4A5147; --hair: #DCE0D8;
+    --brand: #5273A8; --green: #4C7A3F; --card: #FFFFFF;
+    --btn: #1A1D18; --btnink: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101410; --ink: #E2E5DC; --muted: #B3BCAC; --hair: #2B322A;
+      --green: #9DD48B; --card: #171B16;
+      --btn: #E2E5DC; --btnink: #101410;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: system-ui, "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", sans-serif;
+    line-height: 1.75; -webkit-font-smoothing: antialiased;
+  }
+  header { background: var(--brand); color: #fff; padding: 20px 20px 36px; }
+  header .inner, .wrap { max-width: 40rem; margin: 0 auto; }
+  header .bar {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px; flex-wrap: wrap; margin-bottom: 28px; font-size: .9rem;
+  }
+  header .bar a { color: #DCE4F2; text-decoration: none; }
+  header .bar strong { color: #fff; }
+  header .bar nav { display: flex; gap: 12px; flex-wrap: wrap; }
+  header .app { display: flex; gap: 16px; align-items: center; }
+  header img {
+    width: 76px; height: 76px; border-radius: 18px; flex: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  }
+  header h1 { margin: 0; font-size: 1.6rem; line-height: 1.3; letter-spacing: -.01em; }
+  header h1 small { display: block; font-size: .9rem; font-weight: 400; color: #DCE4F2; }
+  header .line { margin: 18px 0 0; color: #EEF2F9; font-size: 1.02rem; }
+
+  .stores {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    margin: -22px 0 8px; position: relative;
+  }
+  .stores a, .stores span {
+    display: block; padding: 11px 14px; text-decoration: none;
+    border-radius: 12px; line-height: 1.25; text-align: center;
+  }
+  .stores a { background: var(--btn); color: var(--btnink); box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+  .stores span { background: var(--card); color: var(--muted); border: 1px solid var(--hair); }
+  .stores small { display: block; font-size: .75rem; opacity: .75; }
+  .stores b { font-size: 1.05rem; white-space: nowrap; }
+
+  .wrap { padding: 0 20px 64px; }
+  .desc { margin-top: 28px; }
+  .desc h2 { font-size: 1.08rem; margin: 36px 0 10px; }
+  .desc p { margin: 0 0 14px; }
+  .desc ul, .desc ol { margin: 0 0 14px; padding-left: 1.3em; }
+  .desc li { margin-bottom: 6px; }
+  .desc li::marker { color: var(--green); }
+
+  footer {
+    margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--hair);
+    color: var(--muted); font-size: .92rem;
+  }
+  footer a { color: var(--green); }
+  footer p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="bar">
+      <a href="/index-ko.html">&larr; Botano</a>
+      <nav>
+        <a href="./?en">English</a>
+        <a href="index-zh.html">中文</a>
+        <a href="index-ja.html">日本語</a>
+        <strong>한국어</strong>
+      </nav>
+    </div>
+    <div class="app">
+      <img src="icon.png" alt="" width="76" height="76">
+      <h1>인형 사진<small>PlushCam</small></h1>
+    </div>
+    <p class="line">소중한 인형이 더러워지거나 잃어버릴까 봐, 투명 인형 파우치에 넣어도 걱정되나요? 집에서 한 번 찍어 두면 인형은 집에서 안전하게, 사진 속에는 언제나 함께할 수 있어요.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stores">
+    <span><small>Android</small><b>Google Play</b><br><small>출시 예정</small></span>
+    <a href="https://apps.apple.com/app/id6835796281"><small>iPhone</small><b>App Store</b></a>
+  </div>
+
+  <div class="desc">
+<p>소중한 인형, 더러워지거나 잃어버릴까 봐 걱정되죠. 투명 인형 파우치에 넣어 데려가도 하루 종일 신경이 쓰이고요.</p>
+<p>PlushCam이 있으면 집에서 인형을 한 번만 찍어 두면 돼요. 그다음엔 어디를 가든 카메라를 켜면 인형이 이미 화면 속에 있어요. 인형은 집에서 안전하게, 사진 속에는 언제나 함께.</p>
+<p>너무 커서 들고 다니기 힘들거나 깜빡 잊고 나온 날에도 괜찮아요.</p>
+<h2>사용 방법</h2>
+<ol><li>단색 배경 앞에서 인형 정면을 찍으면 자동으로 배경을 지워 줘요 (앨범 사진으로도 등록할 수 있어요)</li><li>오른쪽, 뒷면, 왼쪽도 찍어 두면 각도를 바꿀 수 있어요</li><li>밖에서 카메라를 켜고 풍경에 맞춰 셔터를 누르면 끝</li></ol>
+<h2>그 자리에서 찍기: 두 가지 구도</h2>
+<p><b>손에 들기</b><br>인형을 카메라 앞에 들고 찍는 구도예요. 아랫부분은 화면 밖이라 정말 손에 들고 있는 것처럼 보여요.</p>
+<p><b>전신</b><br>인형이 풍경 속에 서 있고, 발밑에는 은은한 그림자가 생겨요. 바닥이나 테이블에 올려 두고 찍은 것처럼요.</p>
+<p>한 번 탭으로 바꿀 수 있고, 끌어서 원하는 위치로 조절할 수도 있어요.</p>
+<h2>나중에 합성: 이미 찍은 사진에도</h2>
+<p>그때 생각이 안 났어도 괜찮아요. 앨범에서 사진을 고르고 인형을 올리기만 하면 돼요. 고해상도로 저장돼요.</p>
+<h2>풍경에 자연스럽게</h2>
+<ul><li>한 손가락으로 이동, 두 손가락으로 크기 조절과 회전</li><li>최대 5개까지 함께</li><li>찍어 둔 각도 바꾸기, 좌우 반전</li><li>주변 밝기와 색에 자동으로 맞추고, 밝기와 그림자는 직접 조절도 가능</li><li>인형을 기울이면 그림자도 윤곽을 따라 바뀌어요</li><li>인형마다 지난번 위치와 크기를 기억</li><li>전면·후면 카메라, 줌, 가로 촬영 지원</li></ul>
+<h2>사진</h2>
+<ul><li>인형을 사진과 같은 해상도로 다시 그려서, 작은 이미지를 붙인 것처럼 보이지 않아요</li><li>날짜가 들어간 폴라로이드 느낌의 흰색 테두리도 넣을 수 있어요</li><li>앨범의 &#x27;PlushCam&#x27; 폴더에 바로 저장되고, 바로 공유도 돼요</li></ul>
+<h2>무료와 회원</h2>
+<p>처음 3장은 무료로 저장할 수 있어요 (사진 구석에 작은 PlushCam 워터마크가 들어가요). 그 후에는 평생 회원권을 한 번만 구매하면 장수 제한 없이, 워터마크 없이, 인형도 무제한으로 등록하고, 휴대폰을 바꿀 때 쓸 백업도 할 수 있어요. 광고 없음, 구독 없음.</p>
+<h2>계정 필요 없음</h2>
+<p>가입도 로그인도 필요 없어요. 인형과 사진은 내 휴대폰에만 저장되고, 배경 제거도 휴대폰 안에서 처리돼요.</p>
+<p>아직 내 인형을 찍지 않았어도 괜찮아요. 오리지널 인형 &#x27;새싹이&#x27;가 들어 있어서 바로 써 볼 수 있어요.</p>
+  </div>
+
+  <footer>
+    <p>문의나 제안은 앱의 "설정 → 의견 및 지원"에서, 또는 <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a>으로 보내 주세요.</p>
+    <p><a href="/plushcam/privacy.html">개인정보 처리방침</a> &middot; <a href="/plushcam/privacy-zh.html">繁體中文</a></p>
+    <p><a href="/index-ko.html">Botano의 다른 앱</a></p>
+  </footer>
+</div>
+</body>
+</html>

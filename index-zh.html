@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>玩偶拍照 PlushCam</title>
+<meta name="description" content="太寶貝的娃娃捨不得帶出門？怕弄髒、怕弄丟，就算裝進透明娃包也還是擔心。在家把它拍一次，娃娃安心留在家，照片裡一樣有它。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="玩偶拍照 PlushCam">
+<meta property="og:description" content="太寶貝的娃娃捨不得帶出門？怕弄髒、怕弄丟，就算裝進透明娃包也還是擔心。在家把它拍一次，娃娃安心留在家，照片裡一樣有它。">
+<meta property="og:image" content="https://botanodev.github.io/plushcam/icon.png">
+<meta property="og:url" content="https://botanodev.github.io/plushcam/index-zh.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="icon.png">
+<link rel="alternate" hreflang="en" href="https://botanodev.github.io/plushcam/">
+<link rel="alternate" hreflang="zh-Hant" href="https://botanodev.github.io/plushcam/index-zh.html">
+<link rel="alternate" hreflang="ja" href="https://botanodev.github.io/plushcam/index-ja.html">
+<link rel="alternate" hreflang="ko" href="https://botanodev.github.io/plushcam/index-ko.html">
+<link rel="alternate" hreflang="x-default" href="https://botanodev.github.io/plushcam/">
+
+<style>
+  :root {
+    --bg: #F5F7F4; --ink: #1A1D18; --muted: #4A5147; --hair: #DCE0D8;
+    --brand: #5273A8; --green: #4C7A3F; --card: #FFFFFF;
+    --btn: #1A1D18; --btnink: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101410; --ink: #E2E5DC; --muted: #B3BCAC; --hair: #2B322A;
+      --green: #9DD48B; --card: #171B16;
+      --btn: #E2E5DC; --btnink: #101410;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: system-ui, "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", sans-serif;
+    line-height: 1.75; -webkit-font-smoothing: antialiased;
+  }
+  header { background: var(--brand); color: #fff; padding: 20px 20px 36px; }
+  header .inner, .wrap { max-width: 40rem; margin: 0 auto; }
+  header .bar {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px; flex-wrap: wrap; margin-bottom: 28px; font-size: .9rem;
+  }
+  header .bar a { color: #DCE4F2; text-decoration: none; }
+  header .bar strong { color: #fff; }
+  header .bar nav { display: flex; gap: 12px; flex-wrap: wrap; }
+  header .app { display: flex; gap: 16px; align-items: center; }
+  header img {
+    width: 76px; height: 76px; border-radius: 18px; flex: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  }
+  header h1 { margin: 0; font-size: 1.6rem; line-height: 1.3; letter-spacing: -.01em; }
+  header h1 small { display: block; font-size: .9rem; font-weight: 400; color: #DCE4F2; }
+  header .line { margin: 18px 0 0; color: #EEF2F9; font-size: 1.02rem; }
+
+  .stores {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    margin: -22px 0 8px; position: relative;
+  }
+  .stores a, .stores span {
+    display: block; padding: 11px 14px; text-decoration: none;
+    border-radius: 12px; line-height: 1.25; text-align: center;
+  }
+  .stores a { background: var(--btn); color: var(--btnink); box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+  .stores span { background: var(--card); color: var(--muted); border: 1px solid var(--hair); }
+  .stores small { display: block; font-size: .75rem; opacity: .75; }
+  .stores b { font-size: 1.05rem; white-space: nowrap; }
+
+  .wrap { padding: 0 20px 64px; }
+  .desc { margin-top: 28px; }
+  .desc h2 { font-size: 1.08rem; margin: 36px 0 10px; }
+  .desc p { margin: 0 0 14px; }
+  .desc ul, .desc ol { margin: 0 0 14px; padding-left: 1.3em; }
+  .desc li { margin-bottom: 6px; }
+  .desc li::marker { color: var(--green); }
+
+  footer {
+    margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--hair);
+    color: var(--muted); font-size: .92rem;
+  }
+  footer a { color: var(--green); }
+  footer p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="bar">
+      <a href="/index-zh.html">&larr; Botano</a>
+      <nav>
+        <a href="./?en">English</a>
+        <strong>中文</strong>
+        <a href="index-ja.html">日本語</a>
+        <a href="index-ko.html">한국어</a>
+      </nav>
+    </div>
+    <div class="app">
+      <img src="icon.png" alt="" width="76" height="76">
+      <h1>玩偶拍照<small>PlushCam</small></h1>
+    </div>
+    <p class="line">太寶貝的娃娃捨不得帶出門？怕弄髒、怕弄丟，就算裝進透明娃包也還是擔心。在家把它拍一次，娃娃安心留在家，照片裡一樣有它。</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stores">
+    <span><small>Android</small><b>Google Play</b><br><small>即將推出</small></span>
+    <a href="https://apps.apple.com/app/id6835796281"><small>iPhone</small><b>App Store</b></a>
+  </div>
+
+  <div class="desc">
+<p>娃娃是你的寶貝。</p>
+<p>出門想帶它一起拍照，又怕弄髒、怕弄丟；就算裝進透明娃包掛在身上，一路上還是忍不住擔心。</p>
+<p>PlushCam 讓你先在家把娃娃拍好。之後不管走到哪裡，打開相機，它就在畫面裡。娃娃安心留在家，照片裡一樣有它。</p>
+<p>太大帶不走、今天剛好忘了帶，也一樣可以。</p>
+<h2>怎麼用</h2>
+<ol><li>在素色背景前拍下玩偶的正面，App 會自動去背（也可以從相簿選照片）</li><li>想要更多角度，可以再補拍右側、背面、左側</li><li>出門時打開相機，玩偶已經在畫面上，對準風景按下快門</li></ol>
+<h2>現場拍：兩種構圖</h2>
+<p><b>手持</b><br>像平常一樣把玩偶舉在鏡頭前，下半身在畫面外，看起來就像真的拿在手上。</p>
+<p><b>完整入鏡</b><br>玩偶整隻站在景物前，腳下有淡淡的影子，像真的放在地上或桌上。</p>
+<p>兩種都能一鍵套用，也可以自己拖曳，在兩者之間自由調整。</p>
+<h2>事後合成：拍好的照片也能放進去</h2>
+<p>當下沒想到？從相簿選一張以前拍的風景照，把玩偶放上去就好，照片以高解析度儲存。</p>
+<h2>讓它融入畫面</h2>
+<ul><li>單指拖曳，雙指縮放與旋轉</li><li>最多 5 隻玩偶同框</li><li>切換拍過的角度、左右翻轉</li><li>依周圍環境自動調整亮度與色調，亮度、陰影也可以自己微調</li><li>玩偶傾斜時，影子跟著它的輪廓走</li><li>每隻玩偶都會記住上次的位置與大小</li><li>前後鏡頭、變焦、橫拍都能用</li></ul>
+<h2>照片</h2>
+<ul><li>玩偶以照片的解析度重新繪製，不是貼上一張小圖</li><li>可以加上拍立得風格的白邊相框，底邊印著日期</li><li>直接存進相簿的「PlushCam」資料夾，也能直接分享</li></ul>
+<h2>免費與會員</h2>
+<p>免費試拍 3 張，照片角落會有小小的 PlushCam 浮水印。之後一次買斷終身會員，就能不限張數儲存、沒有浮水印、不限數量的玩偶，還能備份帶到新手機。無廣告、無訂閱。</p>
+<h2>不需要帳號</h2>
+<p>不用註冊、不用登入。玩偶和照片都只存在你的手機裡，去背也是在手機上完成。</p>
+<p>還沒拍自己的玩偶？App 內建一隻原創小物「小芽」，可以先拿它試試看。</p>
+  </div>
+
+  <footer>
+    <p>有問題或建議，可以在 App 裡的「設定 → 意見與支援」寄給我，或寄到 <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a>。</p>
+    <p><a href="/plushcam/privacy-zh.html">隱私權政策</a> &middot; <a href="/plushcam/privacy.html">English</a></p>
+    <p><a href="/index-zh.html">Botano 的其他 App</a></p>
+  </footer>
+</div>
+</body>
+</html>
